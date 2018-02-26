@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Loguin from './components/loguin-component';
+import Login from './components/Login-Component';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      estado:1
+    }
+    this.change_state=this.change_state.bind(this);
+  }
+
+  change_state(esta){
+    this.setState({estado:esta});
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Tests chat simple</h1>
+          <h1 className="App-title">CHAT SIMPLE</h1>
         </header>
-        <p className="App-intro">
-        <Loguin></Loguin>
-        </p>
+        {
+          (
+            this.state.estado === 1
+            ?
+              <div>
+                <Login></Login>
+              </div>
+            :
+              ''
+          )
+        }
+        
       </div>
     );
   }

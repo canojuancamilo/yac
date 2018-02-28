@@ -22,6 +22,153 @@
   font-size: large;
 }
 
+.content-login{
+  margin-top: 50px;
+  font:bold 25px "arial";
+}
+
+.header{
+  color: #385AF4;
+  font:bold 25px "Trebuchet MS";  
+}
+
+.content{
+  margin-top: 25px;
+}
+
+.buttons-login{
+  margin-top: 15px;
+  width: 100%;
+  float: left;
+}
+
+.btn1{
+  float: left;
+  margin-right: 10px;
+  margin-left: 42%;
+}
+
+.btn2{
+  float: left;
+}
+
+.btn{
+  height: 30px;
+  width: 100px;
+  font:bold 15px "Trebuchet MS";
+}
+
+.btn1-login{
+  background-color: #F48538;
+}
+
+.btn2-login{
+  background-color: #385AF4;
+}
+
+.message{
+  width: 100%;
+  float: left;
+}
+
+.content-message{
+  margin-left: 3%;
+  width: 65%;
+  float: left;
+  display:none;
+}
+
+.content-message1{
+  margin-left: 3%;
+  width: 65%;
+  float: left;
+}
+
+.content-contact{
+  width: 30%;
+  float: left;
+}
+
+.contact-email{
+  width: 100%;
+  float: left;
+  font-size: 17px;
+  margin: 4px;
+}
+
+.contact-name{
+  width: 100%;
+  float: left;
+  font-size: 22px;
+  color: #385AF4;
+  margin: 4px;
+}
+
+.btn-message{
+  background-color: #EC3C24;
+  height: 35px;
+  width: 150px;
+  font:bold 15px "Trebuchet MS";
+}
+
+.contacts{
+  float: left;
+  width: 100%;
+  margin-left: 3%;
+border-bottom: #F48538 solid 2px;
+}
+
+.messa{
+  width: 48%;
+  float: left;
+}
+
+.con-user{
+  font-size: 19px;
+  color: #385AF4;
+}
+
+.con-message{
+  font-size: 23px;
+}
+
+.con-fecha{
+  font-size: 16px;
+  float: left;
+  width: 35%;
+  margin-left: 15%;
+}
+
+.con-hora{
+  font-size: 16px;
+  float: left;
+  width: 30%;
+  margin-right: 19%;
+}
+
+.con-messa{
+float: left;
+width: 80%;
+border-bottom: solid 2px #EC3C24;
+}
+
+.mess{
+  margin-top: 25px;
+  width: 65%;
+  height: 30px;
+  margin-left: -13%;
+  margin-right: 5%;
+  font-size: 17px;
+}
+
+.btn-mess{
+  width: 15%;
+  height: 33px;
+  background-color: #385AF4;
+  font-size: 20px;
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -23,6 +23,7 @@ class Contacts extends Component {
     
     change_state(esta){
         this.setState({estado:esta});
+        return this.state.estado;
     }
     
     Message_to_contact(user){
@@ -30,6 +31,7 @@ class Contacts extends Component {
         this.mostrar_mensajes();
         document.getElementById("content-message").className = "content-message1";
         document.getElementById("content-me").className = "content-message1";
+        return this.state.User;
     }
 
     mostrar_contactos(){
@@ -57,6 +59,7 @@ class Contacts extends Component {
                 }
             }
             this.setState({contacts:contacts});
+            return this.state.contacts;
         });
     }
 
@@ -73,53 +76,56 @@ class Contacts extends Component {
         var mm = hoy.getMonth()+1; //hoy es 0!
         var yyyy = hoy.getFullYear();
         
+        if(message===""){
 
-        firebase.database().ref("messages").child(of_user).once('value', (snapshot) => {
-            var datas = snapshot.val();
-            var n =1;
-            if(datas=== null){
-                n=1;
-            }
-            else{
-                n=Object.keys(datas).length+1;
-            }
-
-            firebase.database().ref('messages').child(of_user).child('message'+n).set({
-                message:message,
-                hora:hora,
-                minuto:minuto,
-                segundo:segundo,
-                dia:dd,
-                mes:mm,
-                ano:yyyy,
-                de:of_user,
-                para:for_user
-            }); 
-        });
-
-        firebase.database().ref("messages").child(for_user).once('value', (snapshot) => {
-            var datas = snapshot.val();
-            var n =1;
-            if(datas=== null){
-                n=1;
-            }
-            else{
-                n=Object.keys(datas).length+1;
-            }
-
-            firebase.database().ref('messages').child(for_user).child('message'+n).set({
-                message:message,
-                hora:hora,
-                minuto:minuto,
-                segundo:segundo,
-                dia:dd,
-                mes:mm,
-                ano:yyyy,
-                de:of_user,
-                para:for_user
-              }); 
-        });
-        document.getElementById("message").value="";
+        }else{
+            firebase.database().ref("messages").child(of_user).once('value', (snapshot) => {
+                var datas = snapshot.val();
+                var n =1;
+                if(datas=== null){
+                    n=1;
+                }
+                else{
+                    n=Object.keys(datas).length+1;
+                }
+    
+                firebase.database().ref('messages').child(of_user).child('message'+n).set({
+                    message:message,
+                    hora:hora,
+                    minuto:minuto,
+                    segundo:segundo,
+                    dia:dd,
+                    mes:mm,
+                    ano:yyyy,
+                    de:of_user,
+                    para:for_user
+                }); 
+            });
+    
+            firebase.database().ref("messages").child(for_user).once('value', (snapshot) => {
+                var datas = snapshot.val();
+                var n =1;
+                if(datas=== null){
+                    n=1;
+                }
+                else{
+                    n=Object.keys(datas).length+1;
+                }
+    
+                firebase.database().ref('messages').child(for_user).child('message'+n).set({
+                    message:message,
+                    hora:hora,
+                    minuto:minuto,
+                    segundo:segundo,
+                    dia:dd,
+                    mes:mm,
+                    ano:yyyy,
+                    de:of_user,
+                    para:for_user
+                  }); 
+            });
+            document.getElementById("message").value="";
+        }
     }
 
     mostrar_mensajes(){

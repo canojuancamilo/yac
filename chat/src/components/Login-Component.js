@@ -22,6 +22,7 @@ class Loguin extends Component {
 
   change_state(esta){
     this.setState({estado:esta});
+    return this.state.estado;
   }
 
   change_user(user){
